@@ -1,0 +1,2345 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJP Interior & Plafon Purwodadi - Spesialis Plafon & Interior</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#FFC800',
+                            yellowLight: '#FFE885',
+                            yellowDark: '#E0B000',
+                            black: '#121212',
+                            darkGray: '#1E1E1E',
+                            cardGray: '#282828',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0F0F0F;
+            color: #F3F4F6;
+        }
+        .yellow-glow {
+            box-shadow: 0 0 25px rgba(255, 200, 0, 0.25);
+        }
+        .yellow-gradient-text {
+            background: linear-gradient(135deg, #FFC800 0%, #FFE885 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-yellow-pattern {
+            background-color: #121212;
+            background-image: radial-gradient(#FFC800 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+            background-opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-brand-black">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md border-b border-brand-yellow/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center font-extrabold text-brand-black text-2xl shadow-lg shadow-brand-yellow/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid font-black">MJP</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-brand-yellow transition-colors">
+                            MJP INTERIOR
+                        </span>
+                        <span class="text-xs font-semibold text-brand-yellow tracking-widest uppercase">
+                            Purwodadi
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#keunggulan" class="hover:text-brand-yellow transition-colors">Keunggulan</a>
+                    <a href="#harga" class="hover:text-brand-yellow transition-colors">Model & Harga</a>
+                    <a href="#kalkulator" class="hover:text-brand-yellow transition-colors flex items-center gap-1.5 text-brand-yellow">
+                        <i class="fa-solid fa-calculator text-xs"></i> Kalkulator Biaya
+                    </a>
+                    <a href="#galeri" class="hover:text-brand-yellow transition-colors">Galeri Hasil</a>
+                    <a href="#layanan" class="hover:text-brand-yellow transition-colors">Layanan</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20ingin%20konsultasi%20pemasangan%20plafon" target="_blank" class="bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-yellow/20 hover:shadow-brand-yellow/40 transition-all flex items-center gap-2 text-sm transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>0812-1295-5973</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white hover:text-brand-yellow focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-darkGray border-b border-brand-yellow/20 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#keunggulan" class="block py-2 hover:text-brand-yellow text-gray-200">Keunggulan</a>
+            <a href="#harga" class="block py-2 hover:text-brand-yellow text-gray-200">Model & Harga</a>
+            <a href="#kalkulator" class="block py-2 text-brand-yellow font-bold">Kalkulator Biaya</a>
+            <a href="#galeri" class="block py-2 hover:text-brand-yellow text-gray-200">Galeri Hasil</a>
+            <a href="#layanan" class="block py-2 hover:text-brand-yellow text-gray-200">Layanan</a>
+            <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20ingin%20konsultasi%20pemasangan%20plafon" target="_blank" class="w-full bg-brand-yellow text-brand-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Hubungi via WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative py-16 md:py-24 bg-brand-black overflow-hidden bg-yellow-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-brand-yellow"></i>
+                        <span>Spesialis Plafon PVC, Gypsum & Interior Purwodadi</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        Rumah Lebih Megah, Rapi & <span class="yellow-gradient-text">Elegan Bergaransi</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        MJP Interior Purwodadi melayani pembuatan plafon rumah dengan berbagai style pilihan (Flat, Drop Ceiling, American Style) dengan kualitas bahan tahan air, tahan rayap, & pengerjaan presisi.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#kalkulator" class="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-brand-yellow/25 hover:scale-105 transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Hitung Estimasi Biaya</span>
+                        </a>
+                        <a href="#harga" class="w-full sm:w-auto bg-brand-darkGray hover:bg-brand-cardGray text-white border border-gray-700 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <span>Daftar Harga & Catalog</span>
+                            <i class="fa-solid fa-arrow-down text-brand-yellow"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Guarantee Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-gray-800">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-circle-check text-brand-yellow"></i>
+                            <span>Free Survey Area</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-user-gear text-brand-yellow"></i>
+                            <span>Tenaga Ahli</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-shield-halved text-brand-yellow"></i>
+                            <span>Bahan Premium</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-handshake text-brand-yellow"></i>
+                            <span>Bayar Akhir</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Card Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-brand-darkGray p-6 rounded-3xl border border-brand-yellow/30 shadow-2xl yellow-glow">
+                        <div class="absolute -top-4 -right-4 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-md">
+                            Best Seller 2026
+                        </div>
+                        
+                        <div class="rounded-2xl overflow-hidden mb-5 bg-brand-black border border-gray-800">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Plafon Drop Ceiling Mewah" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/1e1e1e/FFC800?text=Plafon+Drop+Ceiling'">
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Drop Ceiling 2 Tingkat</h3>
+                                    <p class="text-xs text-gray-400">Paling diminati untuk ruang tamu & keluarga</p>
+                                </div>
+                                <span class="bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40 text-xs font-black px-3 py-1 rounded-lg">
+                                    Rp 300rb/m²
+                                </span>
+                            </div>
+
+                            <div class="bg-brand-black p-3.5 rounded-xl text-xs space-y-2 border border-gray-800">
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Pencahayaan:</span>
+                                    <span class="font-bold text-white">LED Strip + Downlight</span>
+                                </div>
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Kesan Ruangan:</span>
+                                    <span class="font-bold text-brand-yellow">Mewah & Hangat</span>
+                                </div>
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Pengerjaan:</span>
+                                    <span class="font-bold text-white">Rapi, Presisi & Bebas Debu</span>
+                                </div>
+                            </div>
+
+                            <a href="#kalkulator" onclick="selectPresetModel('drop2')" class="w-full block bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold py-3 text-center rounded-xl text-sm transition-colors">
+                                Simulasi Harga Model Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="keunggulan" class="py-16 bg-brand-darkGray border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Mengapa Memilih MJP?</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Standar Kualitas Tertinggi Untuk Plafon Rumah Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Terpasang Kuat & Kokoh</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Menggunakan perangkaan hollow bermutu tinggi, kokoh anti lentur dan tahan beban lampu ornamen berat.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Profesional & Berpengalaman</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Tim spesialis tukang plafon bertahun-tahun di area Purwodadi & sekitarnya. Pengerjaan cepat dan teratur.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Bahan Berkualitas Premium</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Material PVC / Gypsum grade A: Tahan air, tahan gores, anti rayap, serta tidak merambatkan api.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/30 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Hasil Rapi & Presisi</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Sambungan rapi hampa celah, sudut simetris sempurna, dan pencahayaan lampu tersusun indah secara estetis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model & Harga Section -->
+    <section id="harga" class="py-16 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Daftar Biaya Pemasangan</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Model Plafon & Aksesoris</p>
+                </div>
+                <div class="mt-4 md:mt-0 bg-brand-darkGray border border-gray-800 text-gray-300 text-xs px-4 py-2 rounded-xl flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-brand-yellow"></i>
+                    <span>Harga sudah termasuk jasa tukang & bahan baku per m²</span>
+                </div>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Card 1: Flat 1 Warna -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Flat 1 Warna" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Minimalis</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Plafon Flat 1 Warna</h3>
+                            <p class="text-xs text-gray-400 mb-4">Desain simpel, bersih, cocok untuk kamar & ruang kerja</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 150.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Motif PVC / Gypsum polos 1 warna</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Rangka Hollow Galvanis Tahan Karat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Termasuk Lis Pinggir Standard</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('flat1')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Flat 2 Warna -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80" alt="Flat 2 Warna" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Kombinasi</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Plafon Flat 2 Warna</h3>
+                            <p class="text-xs text-gray-400 mb-4">Kombinasi 2 corak motif PVC kontras yang artistik</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 190.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Perpaduan 2 warna/motif pilihan</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Bebas pilih kombinasi warna kayu/putih</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Rangka Hollow galvanis ultra kuat</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('flat2')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Drop 1 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Drop 1 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-yellow text-brand-black text-xs font-black px-2.5 py-1 rounded-md">Populer</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 1 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Memberi efek kedalaman dengan slot lampu tersembunyi</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 250.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Lekukan Drop Ceiling 1 Tingkat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Slot siap pakai untuk LED Strip</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Sangat cocok untuk Ruang Keluarga</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop1')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Drop 2 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-brand-yellow/40 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between yellow-glow">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Drop 2 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-yellow text-brand-black text-xs font-black px-2.5 py-1 rounded-md">Top Favorit</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 2 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Dimensi bertingkat mewah ganda dengan estetika tinggi</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 300.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Konstruksi bertingkat 2 layer</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Efek pencahayaan bertingkat hangat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Tampilan interior kelas utama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop2')" class="w-full bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold py-2.5 rounded-xl transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5: Drop 3 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Drop 3 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Eksklusif</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 3 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Kedalaman 3 variasi layer megah nan megah</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 365.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> 3 Tingkatan drop kustomisabel</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Ideal untuk aula / ruang tamu besar</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Garansi kerapian super halus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop3')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 6: American Style -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80" alt="American Style" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Premium Classic</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">American Style</h3>
+                            <p class="text-xs text-gray-400 mb-4">Gaya pilar grid kotak mewah dengan pencahayaan mewah</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 420.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Desain Panel Grid Klasik Khas Amerika</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Detail profil molding tingkat tinggi</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Mewah, megah & tahan lama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('american')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lighting & Accessories Add-ons Banner -->
+            <div class="bg-brand-darkGray rounded-3xl p-6 sm:p-8 border border-brand-yellow/30">
+                <h3 class="text-xl font-extrabold text-white mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-lightbulb text-brand-yellow"></i>
+                    <span>Pilihan Aksesoris Pencahayaan & Ornamen Tambahan</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Accessory 1 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">LED Strip</h4>
+                                <p class="text-xs text-gray-400">Warm/White Glow</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Rp 35.000</span>
+                            <span class="text-[10px] text-gray-400">per meter (m¹)</span>
+                        </div>
+                    </div>
+
+                    <!-- Accessory 2 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-regular fa-sun"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Downlight</h4>
+                                <p class="text-xs text-gray-400">Spotlight LED Panel</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Rp 100.000</span>
+                            <span class="text-[10px] text-gray-400">per titik pasang</span>
+                        </div>
+                    </div>
+
+                    <!-- Accessory 3 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Ornamen Plafon</h4>
+                                <p class="text-xs text-gray-400">Hiasan Tengah Lampu</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Mulai 150rb</span>
+                            <span class="text-[10px] text-gray-400">per pcs/buah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-red-400 mt-4 italic font-medium">
+                    *Catatan: Harga tertera adalah harga pasang belum termasuk lampu utama/lampu hias gantung.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Estimasi Biaya Section -->
+    <section id="kalkulator" class="py-16 bg-brand-darkGray relative overflow-hidden border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-brand-yellow text-brand-black text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">
+                    Fitur Simulasi Cepat
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">Kalkulator Estimasi Biaya Plafon</h2>
+                <p class="text-sm text-gray-400 mt-2">Hitung perkiraan budget pemasangan plafon rumah Anda secara akurat & transparan dalam hitungan detik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Calculator Inputs -->
+                <div class="lg:col-span-7 bg-brand-black p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-6">
+                    
+                    <!-- 1. Room Dimensions -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3 flex items-center justify-between">
+                            <span>1. Ukuran Ruangan (Panjang x Lebar)</span>
+                            <span id="calculatedArea" class="text-xs font-bold text-brand-yellow bg-brand-yellow/10 px-2.5 py-1 rounded-md border border-brand-yellow/30">Luas: 6 m²</span>
+                        </label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block">Panjang (Meter)</span>
+                                <div class="relative">
+                                    <input type="number" id="inputPanjang" value="3" min="1" step="0.5" class="w-full bg-brand-darkGray border border-gray-700 focus:border-brand-yellow text-white rounded-xl px-4 py-3 font-bold text-sm outline-none transition-colors" oninput="calculateEstimates()">
+                                    <span class="absolute right-3 top-3 text-xs text-gray-500">M</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block">Lebar (Meter)</span>
+                                <div class="relative">
+                                    <input type="number" id="inputLebar" value="2" min="1" step="0.5" class="w-full bg-brand-darkGray border border-gray-700 focus:border-brand-yellow text-white rounded-xl px-4 py-3 font-bold text-sm outline-none transition-colors" oninput="calculateEstimates()">
+                                    <span class="absolute right-3 top-3 text-xs text-gray-500">M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Model Selection -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">2. Pilih Model Plafon</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="selectModel('flat1')" id="btn-flat1" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Flat 1 Warna</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 150rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('flat2')" id="btn-flat2" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Flat 2 Warna</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 190rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop1')" id="btn-drop1" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Drop 1 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 250rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop2')" id="btn-drop2" class="model-select-btn p-3 rounded-xl border-brand-yellow bg-brand-yellow/10 text-left transition-all ring-1 ring-brand-yellow">
+                                <span class="block text-xs font-bold text-white">Drop 2 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 300rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop3')" id="btn-drop3" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Drop 3 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 365rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('american')" id="btn-american" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">American Style</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 420rb/m²</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Add-ons Configuration -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">3. Tambahan Lampu & Ornamen (Opsional)</label>
+                        <div class="space-y-3">
+                            
+                            <!-- Downlight -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-regular fa-sun text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">Downlight Spotlight</span>
+                                        <span class="text-[10px] text-gray-400">Rp 100.000 / titik</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('downlight', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-downlight" class="w-8 text-center text-xs font-bold text-brand-yellow">4</span>
+                                    <button type="button" onclick="updateAddon('downlight', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                            <!-- LED Strip -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-bolt text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">LED Strip Light</span>
+                                        <span class="text-[10px] text-gray-400">Rp 35.000 / meter</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('led', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-led" class="w-8 text-center text-xs font-bold text-brand-yellow">0</span>
+                                    <button type="button" onclick="updateAddon('led', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Ornamen -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-gem text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">Ornamen Tengah</span>
+                                        <span class="text-[10px] text-gray-400">Rp 150.000 / pcs</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('ornamen', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-ornamen" class="w-8 text-center text-xs font-bold text-brand-yellow">0</span>
+                                    <button type="button" onclick="updateAddon('ornamen', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Calculator Output Receipt -->
+                <div class="lg:col-span-5 bg-brand-black p-6 sm:p-8 rounded-3xl border border-brand-yellow/40 shadow-2xl yellow-glow relative">
+                    
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-6">
+                        <div>
+                            <h3 class="font-extrabold text-white text-lg">Rincian Estimasi Biaya</h3>
+                            <p class="text-xs text-gray-400">Simulasi Rincian MJP Interior</p>
+                        </div>
+                        <i class="fa-solid fa-receipt text-2xl text-brand-yellow"></i>
+                    </div>
+
+                    <!-- Breakdown Table -->
+                    <div class="space-y-3 text-xs mb-6">
+                        <div class="flex justify-between text-gray-300">
+                            <span>Ruangan (Panjang x Lebar)</span>
+                            <span id="outDimension" class="font-bold text-white">3 M x 2 M (6 m²)</span>
+                        </div>
+
+                        <div class="flex justify-between text-gray-300">
+                            <span>Model Plafon</span>
+                            <span id="outModelName" class="font-bold text-white">Drop 2 Tingkat</span>
+                        </div>
+
+                        <div class="flex justify-between text-gray-300">
+                            <span>Biaya Plafon (<span id="outModelPriceTag">300rb</span> x <span id="outAreaTag">6m²</span>)</span>
+                            <span id="outSubtotalPlafon" class="font-bold text-white">Rp 1.800.000</span>
+                        </div>
+
+                        <div id="row-downlight" class="flex justify-between text-gray-300">
+                            <span>Downlight (<span id="outDownlightCnt">4</span> titik)</span>
+                            <span id="outDownlightCost" class="font-bold text-white">Rp 400.000</span>
+                        </div>
+
+                        <div id="row-led" class="flex justify-between text-gray-300">
+                            <span>LED Strip (<span id="outLedCnt">0</span> meter)</span>
+                            <span id="outLedCost" class="font-bold text-white">Rp 0</span>
+                        </div>
+
+                        <div id="row-ornamen" class="flex justify-between text-gray-300">
+                            <span>Ornamen (<span id="outOrnamenCnt">0</span> pcs)</span>
+                            <span id="outOrnamenCost" class="font-bold text-white">Rp 0</span>
+                        </div>
+
+                        <div class="border-t border-dashed border-gray-700 pt-3 flex justify-between items-end">
+                            <div>
+                                <span class="block font-black text-white text-sm">TOTAL ESTIMASI</span>
+                                <span class="text-[10px] text-gray-400">Harga Bahan + Jasa Pasang</span>
+                            </div>
+                            <span id="outGrandTotal" class="text-2xl font-black text-brand-yellow">Rp 2.200.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="bg-brand-darkGray p-3.5 rounded-xl text-[11px] text-gray-300 space-y-1.5 mb-6 border border-gray-800">
+                        <p class="flex items-center gap-1.5 font-semibold text-brand-yellow">
+                            <i class="fa-solid fa-gift"></i> Termasuk Gratis Konsultasi & Survey Lokasi!
+                        </p>
+                        <p class="text-gray-400">
+                            *Perhitungan di atas adalah estimasi awal. Harga final ditentukan setelah tim survey mengukur langsung ke rumah Anda.
+                        </p>
+                    </div>
+
+                    <!-- Order via WhatsApp Action Button -->
+                    <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-4 rounded-2xl shadow-lg shadow-emerald-500/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Kirim Hasil Hitungan Ke WhatsApp</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Hasil Pengerjaan Section -->
+    <section id="galeri" class="py-16 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Dokumentasi Portofolio</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Hasil Pengerjaan MJP Interior</p>
+                </div>
+
+                <!-- Gallery Category Filter Buttons -->
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn active bg-brand-yellow text-brand-black font-bold px-4 py-2 rounded-xl text-xs transition-all">Semua</button>
+                    <button onclick="filterGallery('drop')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">Drop Ceiling</button>
+                    <button onclick="filterGallery('flat')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">Flat Minimalis</button>
+                    <button onclick="filterGallery('american')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">American Style</button>
+                </div>
+            </div>
+
+            <!-- Gallery Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop Ceiling 2 Tingkat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 2 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Tamu Bapak Ahmad - Purwodadi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item flat bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Hasil Plafon Flat 2 Warna" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-gray-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Flat 2 Warna</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Kamar Utama Ibu Sinta - Toroh</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item american bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Hasil American Style Grid" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">American Style</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Rumah Mewah Bpk Budi - Grobogan</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop 1 Tingkat Warm LED" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 1 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Keluarga Bpk Hendra - Wirosari</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop 3 Tingkat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 3 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Aula Pertemuan - Purwodadi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item flat bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Hasil Plafon Flat Minimalis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-gray-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Flat 1 Warna</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Makan Ibu Dewi - Godong</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Benefits & Steps -->
+    <section id="layanan" class="py-16 bg-brand-darkGray border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Service Kami</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">4 Jaminan Kemudahan Layanan MJP Interior</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">01</span>
+                    <i class="fa-solid fa-map-location-dot text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">FREE SURVEY</h3>
+                    <p class="text-xs text-gray-400">Tim kami siap datang ke rumah Anda di wilayah Purwodadi & sekitarnya tanpa dipungut biaya survey.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">02</span>
+                    <i class="fa-solid fa-users-gear text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">TENAGA DARI KAMI</h3>
+                    <p class="text-xs text-gray-400">Tukang ahli spesialis plafon berpengalaman, bekerja cepat, bersih, dan mematuhi standar keselamatan.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">03</span>
+                    <i class="fa-solid fa-circle-check text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">TERIMA BERES</h3>
+                    <p class="text-xs text-gray-400">Anda tidak perlu pusing membeli bahan/paku/lampu terpisah. Semua sudah disiapkan tim lengkap.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">04</span>
+                    <i class="fa-solid fa-hand-holding-dollar text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">PEMBAYARAN DI AKHIR</h3>
+                    <p class="text-xs text-gray-400">Sistem pembayaran aman dan tenang. Anda mengecek hasil akhir dahulu setelah selesai dikerjakan.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Callout Banner -->
+    <section class="py-16 bg-brand-yellow text-brand-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+            <span class="bg-brand-black text-brand-yellow text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+                Konsultasi Bebas Biaya
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight max-w-3xl mx-auto">
+                Ingin Plafon Rumah Rapi, Mewah & Tahan Puluhan Tahun?
+            </h2>
+            <p class="text-brand-black/80 font-bold max-w-xl mx-auto text-base">
+                Hubungi MJP Interior Purwodadi sekarang juga. Tim kami siap mengukur lokasi Anda secara gratis!
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20mau%20request%20survey%20lokasi%20pemasangan%20plafon" target="_blank" class="w-full sm:w-auto bg-brand-black hover:bg-brand-darkGray text-white font-extrabold px-8 py-4 rounded-xl shadow-2xl transition-all flex items-center justify-center gap-3 text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+                    <span>Hubungi WhatsApp: 0812-1295-5973</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-gray-400 py-12 border-t border-gray-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-yellow rounded-xl flex items-center justify-center font-extrabold text-brand-black text-xl">
+                            MJP
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-lg text-white block">MJP INTERIOR PURWODADI</span>
+                            <span class="text-[10px] text-brand-yellow tracking-widest uppercase font-semibold">Spesialis Plafon & Interior</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">
+                        Penyedia jasa pemasangan plafon PVC, Gypsum, Drop Ceiling, dan Interior terpercaya untuk wilayah Purwodadi, Grobogan, dan sekitarnya.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Model Plafon</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#harga" class="hover:text-brand-yellow">Plafon Flat 1 Warna</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Plafon Flat 2 Warna</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Drop Ceiling 1 & 2 Tingkat</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Drop Ceiling 3 Tingkat</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">American Style Classic Grid</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Kontak & Alamat</h4>
+                    <p class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-brand-yellow mt-0.5"></i>
+                        <span>Purwodadi, Kab. Grobogan, Jawa Tengah</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-brands fa-whatsapp text-brand-yellow"></i>
+                        <span class="font-bold text-white">0812-1295-5973</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-clock text-brand-yellow"></i>
+                        <span>Senin - Minggu: 08:00 - 18:00 WIB</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-500">
+                <p>&copy; 2026 MJP Interior Purwodadi. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span>Terpasang Kuat & Kokoh</span>
+                    <span>•</span>
+                    <span>Hasil Rapi & Presisi</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data State for Price Matrix
+        const MODEL_PRICES = {
+            flat1: { name: 'Flat 1 Warna', price: 150000 },
+            flat2: { name: 'Flat 2 Warna', price: 190000 },
+            drop1: { name: 'Drop 1 Tingkat', price: 250000 },
+            drop2: { name: 'Drop 2 Tingkat', price: 300000 },
+            drop3: { name: 'Drop 3 Tingkat', price: 365000 },
+            american: { name: 'American Style', price: 420000 }
+        };
+
+        const ADDON_PRICES = {
+            downlight: 100000,
+            led: 35000,
+            ornamen: 150000
+        };
+
+        let currentModelKey = 'drop2';
+        let addonsState = {
+            downlight: 4,
+            led: 0,
+            ornamen: 0
+        };
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Format currency to IDR Rupiah string
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            }).format(number).replace('Rp', 'Rp ');
+        }
+
+        // Handle model selection
+        function selectModel(key) {
+            currentModelKey = key;
+            
+            // Update UI buttons styling
+            const buttons = document.querySelectorAll('.model-select-btn');
+            buttons.forEach(btn => {
+                btn.className = 'model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all';
+            });
+
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if (activeBtn) {
+                activeBtn.className = 'model-select-btn p-3 rounded-xl border-brand-yellow bg-brand-yellow/10 text-left transition-all ring-1 ring-brand-yellow';
+            }
+
+            calculateEstimates();
+        }
+
+        function selectModelAndScroll(key) {
+            selectModel(key);
+            const calcElem = document.getElementById('kalkulator');
+            if (calcElem) {
+                calcElem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function selectPresetModel(key) {
+            selectModel(key);
+        }
+
+        // Increment or Decrement add-on quantities
+        function updateAddon(addonKey, delta) {
+            let newVal = addonsState[addonKey] + delta;
+            if (newVal < 0) newVal = 0;
+            addonsState[addonKey] = newVal;
+
+            const cntElem = document.getElementById(`cnt-${addonKey}`);
+            if (cntElem) {
+                cntElem.innerText = newVal;
+            }
+
+            calculateEstimates();
+        }
+
+        // Primary Calculation Function
+        function calculateEstimates() {
+            const p = parseFloat(document.getElementById('inputPanjang').value) || 0;
+            const l = parseFloat(document.getElementById('inputLebar').value) || 0;
+            const area = Math.max(0, p * l);
+
+            const selectedModel = MODEL_PRICES[currentModelKey];
+            const plafonCost = area * selectedModel.price;
+
+            const downlightCost = addonsState.downlight * ADDON_PRICES.downlight;
+            const ledCost = addonsState.led * ADDON_PRICES.led;
+            const ornamenCost = addonsState.ornamen * ADDON_PRICES.ornamen;
+
+            const grandTotal = plafonCost + downlightCost + ledCost + ornamenCost;
+
+            // DOM Updates
+            document.getElementById('calculatedArea').innerText = `Luas: ${area.toFixed(1)} m²`;
+            document.getElementById('outDimension').innerText = `${p} M x ${l} M (${area.toFixed(1)} m²)`;
+            document.getElementById('outModelName').innerText = selectedModel.name;
+            document.getElementById('outModelPriceTag').innerText = `${(selectedModel.price/1000)}rb`;
+            document.getElementById('outAreaTag').innerText = `${area.toFixed(1)}m²`;
+            document.getElementById('outSubtotalPlafon').innerText = formatRupiah(plafonCost);
+
+            // Addons DOM
+            document.getElementById('outDownlightCnt').innerText = addonsState.downlight;
+            document.getElementById('outDownlightCost').innerText = formatRupiah(downlightCost);
+
+            document.getElementById('outLedCnt').innerText = addonsState.led;
+            document.getElementById('outLedCost').innerText = formatRupiah(ledCost);
+
+            document.getElementById('outOrnamenCnt').innerText = addonsState.ornamen;
+            document.getElementById('outOrnamenCost').innerText = formatRupiah(ornamenCost);
+
+            document.getElementById('outGrandTotal').innerText = formatRupiah(grandTotal);
+        }
+
+        // Send order output formatted to WhatsApp
+        function sendOrderToWhatsApp() {
+            const p = parseFloat(document.getElementById('inputPanjang').value) || 0;
+            const l = parseFloat(document.getElementById('inputLebar').value) || 0;
+            const area = (p * l).toFixed(1);
+            const model = MODEL_PRICES[currentModelKey];
+
+            const plafonCost = (p * l) * model.price;
+            const downlightCost = addonsState.downlight * ADDON_PRICES.downlight;
+            const ledCost = addonsState.led * ADDON_PRICES.led;
+            const ornamenCost = addonsState.ornamen * ADDON_PRICES.ornamen;
+            const grandTotal = plafonCost + downlightCost + ledCost + ornamenCost;
+
+            let msg = `Halo *MJP Interior Purwodadi*, saya mau konsultasi & request survey pemasangan plafon dengan simulasi berikut:\n\n`;
+            msg += `📐 *Ukuran Ruangan:* ${p} M x ${l} M (${area} m²)\n`;
+            msg += `🏠 *Model Plafon:* ${model.name} (${formatRupiah(model.price)}/m²)\n`;
+            msg += `💡 *Downlight:* ${addonsState.downlight} titik (${formatRupiah(downlightCost)})\n`;
+            msg += `⚡ *LED Strip:* ${addonsState.led} meter (${formatRupiah(ledCost)})\n`;
+            msg += `💎 *Ornamen:* ${addonsState.ornamen} pcs (${formatRupiah(ornamenCost)})\n`;
+            msg += `------------------------------------\n`;
+            msg += `💰 *ESTIMASI TOTAL:* *${formatRupiah(grandTotal)}*\n\n`;
+            msg += `Mohon info ketersediaan jadwal survey ke lokasi saya. Terima kasih!`;
+
+            // Trigger Confetti effect on click
+            try {
+                confetti({
+                    particleCount: 80,
+                    spread: 60,
+                    origin: { y: 0.7 },
+                    colors: ['#FFC800', '#FFFFFF', '#10B981']
+                });
+            } catch (e) {
+                // Ignore if confetti script fails
+            }
+
+            setTimeout(() => {
+                const targetUrl = `https://wa.me/6281212955973?text=${encodeURIComponent(msg)}`;
+                window.open(targetUrl, '_blank');
+            }, 300);
+        }
+
+        // Gallery filter logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.gallery-filter-btn');
+
+            btns.forEach(btn => {
+                btn.className = 'gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800';
+            });
+
+            event.currentTarget.className = 'gallery-filter-btn active bg-brand-yellow text-brand-black font-bold px-4 py-2 rounded-xl text-xs transition-all';
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Run calculation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            calculateEstimates();
+        });
+    </script>
+</body>
+</html>
+``````html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJP Interior & Plafon Purwodadi - Spesialis Plafon & Interior</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#FFC800',
+                            yellowLight: '#FFE885',
+                            yellowDark: '#E0B000',
+                            black: '#121212',
+                            darkGray: '#1E1E1E',
+                            cardGray: '#282828',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0F0F0F;
+            color: #F3F4F6;
+        }
+        .yellow-glow {
+            box-shadow: 0 0 25px rgba(255, 200, 0, 0.25);
+        }
+        .yellow-gradient-text {
+            background: linear-gradient(135deg, #FFC800 0%, #FFE885 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-yellow-pattern {
+            background-color: #121212;
+            background-image: radial-gradient(#FFC800 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+            background-opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-brand-black">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md border-b border-brand-yellow/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center font-extrabold text-brand-black text-2xl shadow-lg shadow-brand-yellow/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid font-black">MJP</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-brand-yellow transition-colors">
+                            MJP INTERIOR
+                        </span>
+                        <span class="text-xs font-semibold text-brand-yellow tracking-widest uppercase">
+                            Purwodadi
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#keunggulan" class="hover:text-brand-yellow transition-colors">Keunggulan</a>
+                    <a href="#harga" class="hover:text-brand-yellow transition-colors">Model & Harga</a>
+                    <a href="#kalkulator" class="hover:text-brand-yellow transition-colors flex items-center gap-1.5 text-brand-yellow">
+                        <i class="fa-solid fa-calculator text-xs"></i> Kalkulator Biaya
+                    </a>
+                    <a href="#galeri" class="hover:text-brand-yellow transition-colors">Galeri Hasil</a>
+                    <a href="#layanan" class="hover:text-brand-yellow transition-colors">Layanan</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20ingin%20konsultasi%20pemasangan%20plafon" target="_blank" class="bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-yellow/20 hover:shadow-brand-yellow/40 transition-all flex items-center gap-2 text-sm transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>0812-1295-5973</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white hover:text-brand-yellow focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-darkGray border-b border-brand-yellow/20 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#keunggulan" class="block py-2 hover:text-brand-yellow text-gray-200">Keunggulan</a>
+            <a href="#harga" class="block py-2 hover:text-brand-yellow text-gray-200">Model & Harga</a>
+            <a href="#kalkulator" class="block py-2 text-brand-yellow font-bold">Kalkulator Biaya</a>
+            <a href="#galeri" class="block py-2 hover:text-brand-yellow text-gray-200">Galeri Hasil</a>
+            <a href="#layanan" class="block py-2 hover:text-brand-yellow text-gray-200">Layanan</a>
+            <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20ingin%20konsultasi%20pemasangan%20plafon" target="_blank" class="w-full bg-brand-yellow text-brand-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Hubungi via WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative py-16 md:py-24 bg-brand-black overflow-hidden bg-yellow-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow px-4 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-brand-yellow"></i>
+                        <span>Spesialis Plafon PVC, Gypsum & Interior Purwodadi</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        Rumah Lebih Megah, Rapi & <span class="yellow-gradient-text">Elegan Bergaransi</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        MJP Interior Purwodadi melayani pembuatan plafon rumah dengan berbagai style pilihan (Flat, Drop Ceiling, American Style) dengan kualitas bahan tahan air, tahan rayap, & pengerjaan presisi.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#kalkulator" class="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-brand-yellow/25 hover:scale-105 transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Hitung Estimasi Biaya</span>
+                        </a>
+                        <a href="#harga" class="w-full sm:w-auto bg-brand-darkGray hover:bg-brand-cardGray text-white border border-gray-700 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <span>Daftar Harga & Catalog</span>
+                            <i class="fa-solid fa-arrow-down text-brand-yellow"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Guarantee Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-gray-800">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-circle-check text-brand-yellow"></i>
+                            <span>Free Survey Area</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-user-gear text-brand-yellow"></i>
+                            <span>Tenaga Ahli</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-shield-halved text-brand-yellow"></i>
+                            <span>Bahan Premium</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-handshake text-brand-yellow"></i>
+                            <span>Bayar Akhir</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Card Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-brand-darkGray p-6 rounded-3xl border border-brand-yellow/30 shadow-2xl yellow-glow">
+                        <div class="absolute -top-4 -right-4 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-md">
+                            Best Seller 2026
+                        </div>
+                        
+                        <div class="rounded-2xl overflow-hidden mb-5 bg-brand-black border border-gray-800">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Plafon Drop Ceiling Mewah" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/1e1e1e/FFC800?text=Plafon+Drop+Ceiling'">
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Drop Ceiling 2 Tingkat</h3>
+                                    <p class="text-xs text-gray-400">Paling diminati untuk ruang tamu & keluarga</p>
+                                </div>
+                                <span class="bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40 text-xs font-black px-3 py-1 rounded-lg">
+                                    Rp 300rb/m²
+                                </span>
+                            </div>
+
+                            <div class="bg-brand-black p-3.5 rounded-xl text-xs space-y-2 border border-gray-800">
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Pencahayaan:</span>
+                                    <span class="font-bold text-white">LED Strip + Downlight</span>
+                                </div>
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Kesan Ruangan:</span>
+                                    <span class="font-bold text-brand-yellow">Mewah & Hangat</span>
+                                </div>
+                                <div class="flex justify-between text-gray-300">
+                                    <span>Pengerjaan:</span>
+                                    <span class="font-bold text-white">Rapi, Presisi & Bebas Debu</span>
+                                </div>
+                            </div>
+
+                            <a href="#kalkulator" onclick="selectPresetModel('drop2')" class="w-full block bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold py-3 text-center rounded-xl text-sm transition-colors">
+                                Simulasi Harga Model Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="keunggulan" class="py-16 bg-brand-darkGray border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Mengapa Memilih MJP?</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Standar Kualitas Tertinggi Untuk Plafon Rumah Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Terpasang Kuat & Kokoh</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Menggunakan perangkaan hollow bermutu tinggi, kokoh anti lentur dan tahan beban lampu ornamen berat.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Profesional & Berpengalaman</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Tim spesialis tukang plafon bertahun-tahun di area Purwodadi & sekitarnya. Pengerjaan cepat dan teratur.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Bahan Berkualitas Premium</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Material PVC / Gypsum grade A: Tahan air, tahan gores, anti rayap, serta tidak merambatkan api.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-black p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow/50 transition-all group">
+                    <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/30 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Hasil Rapi & Presisi</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Sambungan rapi hampa celah, sudut simetris sempurna, dan pencahayaan lampu tersusun indah secara estetis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model & Harga Section -->
+    <section id="harga" class="py-16 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Daftar Biaya Pemasangan</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Model Plafon & Aksesoris</p>
+                </div>
+                <div class="mt-4 md:mt-0 bg-brand-darkGray border border-gray-800 text-gray-300 text-xs px-4 py-2 rounded-xl flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-brand-yellow"></i>
+                    <span>Harga sudah termasuk jasa tukang & bahan baku per m²</span>
+                </div>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Card 1: Flat 1 Warna -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Flat 1 Warna" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Minimalis</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Plafon Flat 1 Warna</h3>
+                            <p class="text-xs text-gray-400 mb-4">Desain simpel, bersih, cocok untuk kamar & ruang kerja</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 150.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Motif PVC / Gypsum polos 1 warna</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Rangka Hollow Galvanis Tahan Karat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Termasuk Lis Pinggir Standard</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('flat1')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Flat 2 Warna -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80" alt="Flat 2 Warna" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Kombinasi</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Plafon Flat 2 Warna</h3>
+                            <p class="text-xs text-gray-400 mb-4">Kombinasi 2 corak motif PVC kontras yang artistik</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 190.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Perpaduan 2 warna/motif pilihan</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Bebas pilih kombinasi warna kayu/putih</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Rangka Hollow galvanis ultra kuat</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('flat2')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Drop 1 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Drop 1 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-yellow text-brand-black text-xs font-black px-2.5 py-1 rounded-md">Populer</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 1 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Memberi efek kedalaman dengan slot lampu tersembunyi</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 250.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Lekukan Drop Ceiling 1 Tingkat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Slot siap pakai untuk LED Strip</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Sangat cocok untuk Ruang Keluarga</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop1')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Drop 2 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-brand-yellow/40 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between yellow-glow">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Drop 2 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-yellow text-brand-black text-xs font-black px-2.5 py-1 rounded-md">Top Favorit</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 2 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Dimensi bertingkat mewah ganda dengan estetika tinggi</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 300.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Konstruksi bertingkat 2 layer</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Efek pencahayaan bertingkat hangat</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Tampilan interior kelas utama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop2')" class="w-full bg-brand-yellow hover:bg-brand-yellowDark text-brand-black font-extrabold py-2.5 rounded-xl transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5: Drop 3 Tingkat -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Drop 3 Tingkat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Eksklusif</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">Drop 3 Tingkat</h3>
+                            <p class="text-xs text-gray-400 mb-4">Kedalaman 3 variasi layer megah nan megah</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 365.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> 3 Tingkatan drop kustomisabel</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Ideal untuk aula / ruang tamu besar</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Garansi kerapian super halus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('drop3')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 6: American Style -->
+                <div class="bg-brand-darkGray rounded-2xl border border-gray-800 overflow-hidden hover:border-brand-yellow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 bg-gray-800 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80" alt="American Style" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-darkGray via-transparent"></div>
+                            <span class="absolute bottom-3 left-3 bg-brand-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md border border-gray-700">Premium Classic</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-1">American Style</h3>
+                            <p class="text-xs text-gray-400 mb-4">Gaya pilar grid kotak mewah dengan pencahayaan mewah</p>
+                            <div class="text-2xl font-black text-brand-yellow mb-4">
+                                Rp 420.000 <span class="text-xs text-gray-400 font-normal">/ m²</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Desain Panel Grid Klasik Khas Amerika</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Detail profil molding tingkat tinggi</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> Mewah, megah & tahan lama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectModelAndScroll('american')" class="w-full bg-brand-black hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-2.5 rounded-xl border border-gray-700 transition-colors text-xs flex items-center justify-center gap-2">
+                            <span>Hitung Model Ini</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lighting & Accessories Add-ons Banner -->
+            <div class="bg-brand-darkGray rounded-3xl p-6 sm:p-8 border border-brand-yellow/30">
+                <h3 class="text-xl font-extrabold text-white mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-lightbulb text-brand-yellow"></i>
+                    <span>Pilihan Aksesoris Pencahayaan & Ornamen Tambahan</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Accessory 1 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">LED Strip</h4>
+                                <p class="text-xs text-gray-400">Warm/White Glow</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Rp 35.000</span>
+                            <span class="text-[10px] text-gray-400">per meter (m¹)</span>
+                        </div>
+                    </div>
+
+                    <!-- Accessory 2 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-regular fa-sun"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Downlight</h4>
+                                <p class="text-xs text-gray-400">Spotlight LED Panel</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Rp 100.000</span>
+                            <span class="text-[10px] text-gray-400">per titik pasang</span>
+                        </div>
+                    </div>
+
+                    <!-- Accessory 3 -->
+                    <div class="bg-brand-black p-5 rounded-2xl border border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow text-xl">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Ornamen Plafon</h4>
+                                <p class="text-xs text-gray-400">Hiasan Tengah Lampu</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-black text-brand-yellow text-sm">Mulai 150rb</span>
+                            <span class="text-[10px] text-gray-400">per pcs/buah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-red-400 mt-4 italic font-medium">
+                    *Catatan: Harga tertera adalah harga pasang belum termasuk lampu utama/lampu hias gantung.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Estimasi Biaya Section -->
+    <section id="kalkulator" class="py-16 bg-brand-darkGray relative overflow-hidden border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-brand-yellow text-brand-black text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">
+                    Fitur Simulasi Cepat
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">Kalkulator Estimasi Biaya Plafon</h2>
+                <p class="text-sm text-gray-400 mt-2">Hitung perkiraan budget pemasangan plafon rumah Anda secara akurat & transparan dalam hitungan detik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Calculator Inputs -->
+                <div class="lg:col-span-7 bg-brand-black p-6 sm:p-8 rounded-3xl border border-gray-800 space-y-6">
+                    
+                    <!-- 1. Room Dimensions -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3 flex items-center justify-between">
+                            <span>1. Ukuran Ruangan (Panjang x Lebar)</span>
+                            <span id="calculatedArea" class="text-xs font-bold text-brand-yellow bg-brand-yellow/10 px-2.5 py-1 rounded-md border border-brand-yellow/30">Luas: 6 m²</span>
+                        </label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block">Panjang (Meter)</span>
+                                <div class="relative">
+                                    <input type="number" id="inputPanjang" value="3" min="1" step="0.5" class="w-full bg-brand-darkGray border border-gray-700 focus:border-brand-yellow text-white rounded-xl px-4 py-3 font-bold text-sm outline-none transition-colors" oninput="calculateEstimates()">
+                                    <span class="absolute right-3 top-3 text-xs text-gray-500">M</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block">Lebar (Meter)</span>
+                                <div class="relative">
+                                    <input type="number" id="inputLebar" value="2" min="1" step="0.5" class="w-full bg-brand-darkGray border border-gray-700 focus:border-brand-yellow text-white rounded-xl px-4 py-3 font-bold text-sm outline-none transition-colors" oninput="calculateEstimates()">
+                                    <span class="absolute right-3 top-3 text-xs text-gray-500">M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Model Selection -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">2. Pilih Model Plafon</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="selectModel('flat1')" id="btn-flat1" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Flat 1 Warna</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 150rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('flat2')" id="btn-flat2" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Flat 2 Warna</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 190rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop1')" id="btn-drop1" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Drop 1 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 250rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop2')" id="btn-drop2" class="model-select-btn p-3 rounded-xl border-brand-yellow bg-brand-yellow/10 text-left transition-all ring-1 ring-brand-yellow">
+                                <span class="block text-xs font-bold text-white">Drop 2 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 300rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('drop3')" id="btn-drop3" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">Drop 3 Tingkat</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 365rb/m²</span>
+                            </button>
+
+                            <button type="button" onclick="selectModel('american')" id="btn-american" class="model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all">
+                                <span class="block text-xs font-bold text-white">American Style</span>
+                                <span class="text-[11px] text-brand-yellow font-black">Rp 420rb/m²</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Add-ons Configuration -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">3. Tambahan Lampu & Ornamen (Opsional)</label>
+                        <div class="space-y-3">
+                            
+                            <!-- Downlight -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-regular fa-sun text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">Downlight Spotlight</span>
+                                        <span class="text-[10px] text-gray-400">Rp 100.000 / titik</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('downlight', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-downlight" class="w-8 text-center text-xs font-bold text-brand-yellow">4</span>
+                                    <button type="button" onclick="updateAddon('downlight', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                            <!-- LED Strip -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-bolt text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">LED Strip Light</span>
+                                        <span class="text-[10px] text-gray-400">Rp 35.000 / meter</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('led', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-led" class="w-8 text-center text-xs font-bold text-brand-yellow">0</span>
+                                    <button type="button" onclick="updateAddon('led', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Ornamen -->
+                            <div class="flex items-center justify-between p-3.5 bg-brand-darkGray rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-gem text-brand-yellow"></i>
+                                    <div>
+                                        <span class="block text-xs font-bold text-white">Ornamen Tengah</span>
+                                        <span class="text-[10px] text-gray-400">Rp 150.000 / pcs</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button type="button" onclick="updateAddon('ornamen', -1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">-</button>
+                                    <span id="cnt-ornamen" class="w-8 text-center text-xs font-bold text-brand-yellow">0</span>
+                                    <button type="button" onclick="updateAddon('ornamen', 1)" class="w-8 h-8 rounded-lg bg-brand-black border border-gray-700 text-white hover:border-brand-yellow text-xs font-bold">+</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Calculator Output Receipt -->
+                <div class="lg:col-span-5 bg-brand-black p-6 sm:p-8 rounded-3xl border border-brand-yellow/40 shadow-2xl yellow-glow relative">
+                    
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-6">
+                        <div>
+                            <h3 class="font-extrabold text-white text-lg">Rincian Estimasi Biaya</h3>
+                            <p class="text-xs text-gray-400">Simulasi Rincian MJP Interior</p>
+                        </div>
+                        <i class="fa-solid fa-receipt text-2xl text-brand-yellow"></i>
+                    </div>
+
+                    <!-- Breakdown Table -->
+                    <div class="space-y-3 text-xs mb-6">
+                        <div class="flex justify-between text-gray-300">
+                            <span>Ruangan (Panjang x Lebar)</span>
+                            <span id="outDimension" class="font-bold text-white">3 M x 2 M (6 m²)</span>
+                        </div>
+
+                        <div class="flex justify-between text-gray-300">
+                            <span>Model Plafon</span>
+                            <span id="outModelName" class="font-bold text-white">Drop 2 Tingkat</span>
+                        </div>
+
+                        <div class="flex justify-between text-gray-300">
+                            <span>Biaya Plafon (<span id="outModelPriceTag">300rb</span> x <span id="outAreaTag">6m²</span>)</span>
+                            <span id="outSubtotalPlafon" class="font-bold text-white">Rp 1.800.000</span>
+                        </div>
+
+                        <div id="row-downlight" class="flex justify-between text-gray-300">
+                            <span>Downlight (<span id="outDownlightCnt">4</span> titik)</span>
+                            <span id="outDownlightCost" class="font-bold text-white">Rp 400.000</span>
+                        </div>
+
+                        <div id="row-led" class="flex justify-between text-gray-300">
+                            <span>LED Strip (<span id="outLedCnt">0</span> meter)</span>
+                            <span id="outLedCost" class="font-bold text-white">Rp 0</span>
+                        </div>
+
+                        <div id="row-ornamen" class="flex justify-between text-gray-300">
+                            <span>Ornamen (<span id="outOrnamenCnt">0</span> pcs)</span>
+                            <span id="outOrnamenCost" class="font-bold text-white">Rp 0</span>
+                        </div>
+
+                        <div class="border-t border-dashed border-gray-700 pt-3 flex justify-between items-end">
+                            <div>
+                                <span class="block font-black text-white text-sm">TOTAL ESTIMASI</span>
+                                <span class="text-[10px] text-gray-400">Harga Bahan + Jasa Pasang</span>
+                            </div>
+                            <span id="outGrandTotal" class="text-2xl font-black text-brand-yellow">Rp 2.200.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="bg-brand-darkGray p-3.5 rounded-xl text-[11px] text-gray-300 space-y-1.5 mb-6 border border-gray-800">
+                        <p class="flex items-center gap-1.5 font-semibold text-brand-yellow">
+                            <i class="fa-solid fa-gift"></i> Termasuk Gratis Konsultasi & Survey Lokasi!
+                        </p>
+                        <p class="text-gray-400">
+                            *Perhitungan di atas adalah estimasi awal. Harga final ditentukan setelah tim survey mengukur langsung ke rumah Anda.
+                        </p>
+                    </div>
+
+                    <!-- Order via WhatsApp Action Button -->
+                    <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-4 rounded-2xl shadow-lg shadow-emerald-500/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Kirim Hasil Hitungan Ke WhatsApp</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Hasil Pengerjaan Section -->
+    <section id="galeri" class="py-16 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Dokumentasi Portofolio</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Hasil Pengerjaan MJP Interior</p>
+                </div>
+
+                <!-- Gallery Category Filter Buttons -->
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn active bg-brand-yellow text-brand-black font-bold px-4 py-2 rounded-xl text-xs transition-all">Semua</button>
+                    <button onclick="filterGallery('drop')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">Drop Ceiling</button>
+                    <button onclick="filterGallery('flat')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">Flat Minimalis</button>
+                    <button onclick="filterGallery('american')" class="gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800">American Style</button>
+                </div>
+            </div>
+
+            <!-- Gallery Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop Ceiling 2 Tingkat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 2 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Tamu Bapak Ahmad - Purwodadi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item flat bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Hasil Plafon Flat 2 Warna" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-gray-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Flat 2 Warna</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Kamar Utama Ibu Sinta - Toroh</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item american bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Hasil American Style Grid" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">American Style</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Rumah Mewah Bpk Budi - Grobogan</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop 1 Tingkat Warm LED" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 1 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Keluarga Bpk Hendra - Wirosari</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item drop bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Hasil Drop 3 Tingkat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-brand-yellow text-brand-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Drop 3 Tingkat</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Aula Pertemuan - Purwodadi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item flat bg-brand-darkGray rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Hasil Plafon Flat Minimalis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div>
+                                <span class="bg-gray-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Flat 1 Warna</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Ruang Makan Ibu Dewi - Godong</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Benefits & Steps -->
+    <section id="layanan" class="py-16 bg-brand-darkGray border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-black uppercase text-brand-yellow tracking-widest mb-2">Service Kami</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">4 Jaminan Kemudahan Layanan MJP Interior</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">01</span>
+                    <i class="fa-solid fa-map-location-dot text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">FREE SURVEY</h3>
+                    <p class="text-xs text-gray-400">Tim kami siap datang ke rumah Anda di wilayah Purwodadi & sekitarnya tanpa dipungut biaya survey.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">02</span>
+                    <i class="fa-solid fa-users-gear text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">TENAGA DARI KAMI</h3>
+                    <p class="text-xs text-gray-400">Tukang ahli spesialis plafon berpengalaman, bekerja cepat, bersih, dan mematuhi standar keselamatan.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">03</span>
+                    <i class="fa-solid fa-circle-check text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">TERIMA BERES</h3>
+                    <p class="text-xs text-gray-400">Anda tidak perlu pusing membeli bahan/paku/lampu terpisah. Semua sudah disiapkan tim lengkap.</p>
+                </div>
+
+                <div class="bg-brand-black p-6 rounded-2xl border border-brand-yellow/20 relative">
+                    <span class="text-4xl font-black text-brand-yellow/20 absolute top-4 right-4">04</span>
+                    <i class="fa-solid fa-hand-holding-dollar text-brand-yellow text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">PEMBAYARAN DI AKHIR</h3>
+                    <p class="text-xs text-gray-400">Sistem pembayaran aman dan tenang. Anda mengecek hasil akhir dahulu setelah selesai dikerjakan.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Callout Banner -->
+    <section class="py-16 bg-brand-yellow text-brand-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+            <span class="bg-brand-black text-brand-yellow text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+                Konsultasi Bebas Biaya
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight max-w-3xl mx-auto">
+                Ingin Plafon Rumah Rapi, Mewah & Tahan Puluhan Tahun?
+            </h2>
+            <p class="text-brand-black/80 font-bold max-w-xl mx-auto text-base">
+                Hubungi MJP Interior Purwodadi sekarang juga. Tim kami siap mengukur lokasi Anda secara gratis!
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/6281212955973?text=Halo%20MJP%20Interior,%20saya%20mau%20request%20survey%20lokasi%20pemasangan%20plafon" target="_blank" class="w-full sm:w-auto bg-brand-black hover:bg-brand-darkGray text-white font-extrabold px-8 py-4 rounded-xl shadow-2xl transition-all flex items-center justify-center gap-3 text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+                    <span>Hubungi WhatsApp: 0812-1295-5973</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-gray-400 py-12 border-t border-gray-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-yellow rounded-xl flex items-center justify-center font-extrabold text-brand-black text-xl">
+                            MJP
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-lg text-white block">MJP INTERIOR PURWODADI</span>
+                            <span class="text-[10px] text-brand-yellow tracking-widest uppercase font-semibold">Spesialis Plafon & Interior</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">
+                        Penyedia jasa pemasangan plafon PVC, Gypsum, Drop Ceiling, dan Interior terpercaya untuk wilayah Purwodadi, Grobogan, dan sekitarnya.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Model Plafon</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#harga" class="hover:text-brand-yellow">Plafon Flat 1 Warna</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Plafon Flat 2 Warna</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Drop Ceiling 1 & 2 Tingkat</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">Drop Ceiling 3 Tingkat</a></li>
+                        <li><a href="#harga" class="hover:text-brand-yellow">American Style Classic Grid</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Kontak & Alamat</h4>
+                    <p class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-brand-yellow mt-0.5"></i>
+                        <span>Purwodadi, Kab. Grobogan, Jawa Tengah</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-brands fa-whatsapp text-brand-yellow"></i>
+                        <span class="font-bold text-white">0812-1295-5973</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-clock text-brand-yellow"></i>
+                        <span>Senin - Minggu: 08:00 - 18:00 WIB</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-500">
+                <p>&copy; 2026 MJP Interior Purwodadi. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span>Terpasang Kuat & Kokoh</span>
+                    <span>•</span>
+                    <span>Hasil Rapi & Presisi</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data State for Price Matrix
+        const MODEL_PRICES = {
+            flat1: { name: 'Flat 1 Warna', price: 150000 },
+            flat2: { name: 'Flat 2 Warna', price: 190000 },
+            drop1: { name: 'Drop 1 Tingkat', price: 250000 },
+            drop2: { name: 'Drop 2 Tingkat', price: 300000 },
+            drop3: { name: 'Drop 3 Tingkat', price: 365000 },
+            american: { name: 'American Style', price: 420000 }
+        };
+
+        const ADDON_PRICES = {
+            downlight: 100000,
+            led: 35000,
+            ornamen: 150000
+        };
+
+        let currentModelKey = 'drop2';
+        let addonsState = {
+            downlight: 4,
+            led: 0,
+            ornamen: 0
+        };
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Format currency to IDR Rupiah string
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            }).format(number).replace('Rp', 'Rp ');
+        }
+
+        // Handle model selection
+        function selectModel(key) {
+            currentModelKey = key;
+            
+            // Update UI buttons styling
+            const buttons = document.querySelectorAll('.model-select-btn');
+            buttons.forEach(btn => {
+                btn.className = 'model-select-btn p-3 rounded-xl border border-gray-800 bg-brand-darkGray hover:border-brand-yellow text-left transition-all';
+            });
+
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if (activeBtn) {
+                activeBtn.className = 'model-select-btn p-3 rounded-xl border-brand-yellow bg-brand-yellow/10 text-left transition-all ring-1 ring-brand-yellow';
+            }
+
+            calculateEstimates();
+        }
+
+        function selectModelAndScroll(key) {
+            selectModel(key);
+            const calcElem = document.getElementById('kalkulator');
+            if (calcElem) {
+                calcElem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function selectPresetModel(key) {
+            selectModel(key);
+        }
+
+        // Increment or Decrement add-on quantities
+        function updateAddon(addonKey, delta) {
+            let newVal = addonsState[addonKey] + delta;
+            if (newVal < 0) newVal = 0;
+            addonsState[addonKey] = newVal;
+
+            const cntElem = document.getElementById(`cnt-${addonKey}`);
+            if (cntElem) {
+                cntElem.innerText = newVal;
+            }
+
+            calculateEstimates();
+        }
+
+        // Primary Calculation Function
+        function calculateEstimates() {
+            const p = parseFloat(document.getElementById('inputPanjang').value) || 0;
+            const l = parseFloat(document.getElementById('inputLebar').value) || 0;
+            const area = Math.max(0, p * l);
+
+            const selectedModel = MODEL_PRICES[currentModelKey];
+            const plafonCost = area * selectedModel.price;
+
+            const downlightCost = addonsState.downlight * ADDON_PRICES.downlight;
+            const ledCost = addonsState.led * ADDON_PRICES.led;
+            const ornamenCost = addonsState.ornamen * ADDON_PRICES.ornamen;
+
+            const grandTotal = plafonCost + downlightCost + ledCost + ornamenCost;
+
+            // DOM Updates
+            document.getElementById('calculatedArea').innerText = `Luas: ${area.toFixed(1)} m²`;
+            document.getElementById('outDimension').innerText = `${p} M x ${l} M (${area.toFixed(1)} m²)`;
+            document.getElementById('outModelName').innerText = selectedModel.name;
+            document.getElementById('outModelPriceTag').innerText = `${(selectedModel.price/1000)}rb`;
+            document.getElementById('outAreaTag').innerText = `${area.toFixed(1)}m²`;
+            document.getElementById('outSubtotalPlafon').innerText = formatRupiah(plafonCost);
+
+            // Addons DOM
+            document.getElementById('outDownlightCnt').innerText = addonsState.downlight;
+            document.getElementById('outDownlightCost').innerText = formatRupiah(downlightCost);
+
+            document.getElementById('outLedCnt').innerText = addonsState.led;
+            document.getElementById('outLedCost').innerText = formatRupiah(ledCost);
+
+            document.getElementById('outOrnamenCnt').innerText = addonsState.ornamen;
+            document.getElementById('outOrnamenCost').innerText = formatRupiah(ornamenCost);
+
+            document.getElementById('outGrandTotal').innerText = formatRupiah(grandTotal);
+        }
+
+        // Send order output formatted to WhatsApp
+        function sendOrderToWhatsApp() {
+            const p = parseFloat(document.getElementById('inputPanjang').value) || 0;
+            const l = parseFloat(document.getElementById('inputLebar').value) || 0;
+            const area = (p * l).toFixed(1);
+            const model = MODEL_PRICES[currentModelKey];
+
+            const plafonCost = (p * l) * model.price;
+            const downlightCost = addonsState.downlight * ADDON_PRICES.downlight;
+            const ledCost = addonsState.led * ADDON_PRICES.led;
+            const ornamenCost = addonsState.ornamen * ADDON_PRICES.ornamen;
+            const grandTotal = plafonCost + downlightCost + ledCost + ornamenCost;
+
+            let msg = `Halo *MJP Interior Purwodadi*, saya mau konsultasi & request survey pemasangan plafon dengan simulasi berikut:\n\n`;
+            msg += `📐 *Ukuran Ruangan:* ${p} M x ${l} M (${area} m²)\n`;
+            msg += `🏠 *Model Plafon:* ${model.name} (${formatRupiah(model.price)}/m²)\n`;
+            msg += `💡 *Downlight:* ${addonsState.downlight} titik (${formatRupiah(downlightCost)})\n`;
+            msg += `⚡ *LED Strip:* ${addonsState.led} meter (${formatRupiah(ledCost)})\n`;
+            msg += `💎 *Ornamen:* ${addonsState.ornamen} pcs (${formatRupiah(ornamenCost)})\n`;
+            msg += `------------------------------------\n`;
+            msg += `💰 *ESTIMASI TOTAL:* *${formatRupiah(grandTotal)}*\n\n`;
+            msg += `Mohon info ketersediaan jadwal survey ke lokasi saya. Terima kasih!`;
+
+            // Trigger Confetti effect on click
+            try {
+                confetti({
+                    particleCount: 80,
+                    spread: 60,
+                    origin: { y: 0.7 },
+                    colors: ['#FFC800',h '#FFFFFF', '#10B981']
+                });
+            } catch (e) {
+                // Ignore if confetti script fails
+            }
+
+            setTimeout(() => {
+                const targetUrl = `https://wa.me/6281212955973?text=${encodeURIComponent(msg)}`;
+                window.open(targetUrl, '_blank');
+            }, 300);
+        }
+
+        // Gallery filter logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.gallery-filter-btn');
+
+            btns.forEach(btn => {
+                btn.className = 'gallery-filter-btn bg-brand-darkGray hover:bg-brand-cardGray text-gray-300 font-bold px-4 py-2 rounded-xl text-xs transition-all border border-gray-800';
+            });
+
+            event.currentTarget.className = 'gallery-filter-btn active bg-brand-yellow text-brand-black font-bold px-4 py-2 rounded-xl text-xs transition-all';
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Run calculation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            calculateEstimates();
+        });
+    </script>
+</body>
+</html>
+```
